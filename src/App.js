@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Login from './Pages/Login/Login';
+import Dashboard from './Pages/Dashboard/Dashboard';
+import Table from './Pages/Table/Table';
+import Compression from './Pages/Compression/Compression';
+import { useEffect } from 'react';
+
 
 function App() {
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<> <Login /></>} />
+          <Route path='/Dashboard' element={<><Dashboard /></>} />
+          <Route path='/table' element={<><Table /></>} />
+          <Route path='/compression' element={<><Compression /></>} />
+
+
+        </Routes>
+      </BrowserRouter>
+     
+
     </div>
+
   );
 }
 
